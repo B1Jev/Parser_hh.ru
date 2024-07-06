@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Результаты поиска вакансий</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .vacancy-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .vacancy-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .vacancy-item h2 {
+      margin-top: 0;
+    }
+
+    .vacancy-item a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .vacancy-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Результаты поиска</h1>
+
+  <div id="results">
+    {% if vacancies %}
+      <ul class="vacancy-list">
+        {% for vacancy in vacancies %}
+          <li class="vacancy-item">
+            <h2><a href="{{ vacancy.url }}">{{ vacancy.title }}</a></h2>
+            <p>Компания: {{ vacancy.company }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Вакансии не найдены.</p>
+    {% endif %}
+  </div>
+
+</body>
+</html>

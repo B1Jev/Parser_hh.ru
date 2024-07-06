@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Парсер</title>
+    <style>
+        body {
+            background-color: teal;
+            font-family: sans-serif;
+        }
+        h1 {
+            text-align: center
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 4px;
+            margin-bottom: 7px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #000000;
+            color: white;
+            padding: 10px 17px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Парсер вакансий HH.ru</b></h1>
+    <form action="/" method="POST">
+        {% csrf_token %}
+        <label for="keyword"><strong>Название вакансии:</strong></label>
+        <input type="text" id="keyword" name="keyword" placeholder="Например, 'Python разработчик'">
+        <button type="submit"><strong>Поиск</strong></button>
+    </form>
+</body>
+</html>
