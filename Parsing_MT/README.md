@@ -14,12 +14,11 @@
 ## Установка
 pip install -r requirements.txt
 
-python manage.py migrate
-
 ## Docker
 
 docker-compose up --build
 
 ## Запуск
 
+python manage.py migrate
 python manage.py runserver
